@@ -11,6 +11,10 @@ import { HomeOurServecesComponent } from './components/home-our-serveces/home-ou
 import { HomeSaysAboutUsComponent } from './components/home-says-about-us/home-says-about-us.component';
 import { HomeReservationComponent } from './components/home-reservation/home-reservation.component';
 import { HomeLuxuryRoomComponent } from './components/home-luxury-room/home-luxury-room.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PageReservationComponent } from './components/page-reservation/page-reservation.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 
 @NgModule({
@@ -18,17 +22,22 @@ import { HomeLuxuryRoomComponent } from './components/home-luxury-room/home-luxu
     AppComponent,
     NavbarComponent,
     FooterComponent,
-   
+
     HomeBestRoomComponent,
     HomeOurServecesComponent,
     HomeSaysAboutUsComponent,
     HomeReservationComponent,
     HomeLuxuryRoomComponent,
-    
+    PageReservationComponent,
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

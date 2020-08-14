@@ -12,18 +12,22 @@
         <!-- planner-->
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 planner">
           <div class="planner-block">
-            <form class="form-planner form-horizontal">
+            <form [formGroup]="checkForm" (ngSubmit)="onSubmit()" class="form-planner form-horizontal">
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                   <div class="form-group">
-                    <label>Check in</label>
-                    <input class="form-control __plannerInput" id="datetimepicker1" type="text" placeholder="10-05-2015"/>
+
+                    <label>Arriver</label>
+                    <input formControlName="arriver" class="form-control __plannerInput" id="datetimepicker1" type="text" placeholder="01-08-2020"/>
+                    <div *ngIf="checkForm.get('arriver').getError('required')&& checkForm.get('arriver').touched" class="d-inline  bg-transparent text-danger">Champ nécessaire</div>
+
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                   <div class="form-group">
-                    <label>Check out</label>
-                    <input class="form-control __plannerInput" id="datetimepicker2" type="text" placeholder="17-05-2015"/>
+                    <label>Quitter</label>
+                    <input formControlName="quitter" class="form-control __plannerInput" id="datetimepicker2" type="text" placeholder="01-08-2020"/>
+                    <div *ngIf="checkForm.get('quitter').getError('required')&& checkForm.get('arriver').touched" class="d-inline  bg-transparent text-danger">Champ nécessaire</div>
                   </div>
                 </div>
               </div>
@@ -44,37 +48,43 @@
                   <div class="form-group">
                       <label>Adults</label>
                       <div class="theme-select">
-                        <select class="form-control __plannerSelect">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4</option>
-                          <option value="">5</option>
+                        <select formControlName="adult" class="form-control __plannerSelect">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
                         </select>
                       </div>
                     </div>
                   </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                   <div class="form-group">
-                      <label>Kids</label>
+                      <label>Enfants</label>
                       <div class="theme-select">
-                        <select class="form-control __plannerSelect">
-                          <option value="">0</option>
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4</option>
+                        <select formControlName="enfants" name="enfants" class="form-control __plannerSelect">
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
                         </select>
                       </div>
+
                     </div>
                   </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                   <div class="form-group">
-                      <label>Enter your email</label>
-                      <input type="email" class="form-control" placeholder="E-mail"/>
+                      <label>Entrer Votre email</label>
+                      <input formControlName="email" type="email" class="form-control" placeholder="E-mail"/>
+                      <div *ngIf="checkForm.get('email').getError('email')" class="d-inline  bg-transparent text-danger">Email invalide</div>
+                      <div *ngIf="checkForm.get('email').getError('required')&& checkForm.get('email').touched" class=" d-inline  bg-transparent text-danger"> email nécessaire</div>
+                      <div class="form-group">
+                    </div>
                     </div>
                   </div>
               </div>
+
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="form-group">
@@ -87,7 +97,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="planner-check-availability">
-                    <a href="wizzard-step1.html" class="btn btn-default">Check availability</a>
+                    <button  type="submit" [disabled]="checkForm.invalid" href="wizzard-step1.html" class="btn btn-default">Check availability</button>
                   </div>
                 </div>
               </div>
