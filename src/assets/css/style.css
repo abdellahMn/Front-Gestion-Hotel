@@ -733,10 +733,10 @@ hr {
 **/
 
 .bg-parallax {
-  background: url(../images/parallax/slide1.jpg);
+  background: url(../images/parallax/slide.jpg);
 }
 .bg-parallax2 {
-  background: url(../images/parallax/slide2.jpg);
+  background: url(../images/parallax/slide3.jpg);
 }
 
 .bg-parallax, .bg-parallax2 {
