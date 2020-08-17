@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,6 +15,7 @@ import { HomeLuxuryRoomComponent } from './components/home-luxury-room/home-luxu
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PageReservationComponent } from './components/page-reservation/page-reservation.component';
 import { HomeComponent } from './components/home/home.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -36,7 +38,9 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NgxPaginationModule,
 
   ],
   providers: [],

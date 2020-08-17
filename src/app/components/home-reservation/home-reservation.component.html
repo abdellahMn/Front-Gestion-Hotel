@@ -18,7 +18,7 @@
                   <div class="form-group">
 
                     <label>Arriver</label>
-                    <input formControlName="arriver" class="form-control __plannerInput" id="datetimepicker1" type="text" placeholder="01-08-2020"/>
+                    <input formControlName="arriver" class="form-control" id="arriver" type="date"/>
                     <div *ngIf="checkForm.get('arriver').getError('required')&& checkForm.get('arriver').touched" class="d-inline  bg-transparent text-danger">Champ nécessaire</div>
 
                   </div>
@@ -26,7 +26,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                   <div class="form-group">
                     <label>Quitter</label>
-                    <input formControlName="quitter" class="form-control __plannerInput" id="datetimepicker2" type="text" placeholder="01-08-2020"/>
+                    <input formControlName="quitter" class="form-control" id="quitter" type="date"/>
                     <div *ngIf="checkForm.get('quitter').getError('required')&& checkForm.get('arriver').touched" class="d-inline  bg-transparent text-danger">Champ nécessaire</div>
                   </div>
                 </div>
@@ -34,10 +34,10 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="form-group">
-                      <label>Room type</label>
+                      <label>Type chambre</label>
                       <div class="theme-select">
                         <select class="form-control __plannerSelect">
-                          <option value="">Select a room</option>
+                          <option value="">Selecter une chambre</option>
                         </select>
                       </div>
                   </div>
@@ -88,7 +88,7 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="form-group">
-                      <label>Price range</label>
+                      <label>Prix</label>
                       <div id="slider-range"></div>
                       <div id="amount"><span id="amount1"></span><span id="amount2"></span></div>
                     </div>

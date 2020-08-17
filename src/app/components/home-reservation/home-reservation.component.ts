@@ -1,5 +1,7 @@
+import { ReservationService } from './../../services/reservation.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +20,7 @@ export class HomeReservationComponent implements OnInit {
     availability: new FormControl('')
   })
 
-  constructor() {
+  constructor(private route:Router) {
     this.checkForm.controls['enfants'].setValue(0, {onlySelf: true});
     this.checkForm.controls['adult'].setValue(1, {onlySelf: true});
 
@@ -27,7 +29,14 @@ export class HomeReservationComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-
+    this.route.navigate(['reservation'], {
+      queryParams: {
+        arriver: this.checkForm.value.arriver,
+        quitter: this.checkForm.value.quitter,
+        adult: this.checkForm.value.adult,
+        enfants: this.checkForm.value.enfants,
+        email: this.checkForm.value.email
+      } });
   }
 
 }
