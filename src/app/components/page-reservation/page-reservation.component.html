@@ -2,11 +2,9 @@
 
   <!-- main wrapper -->
   <div class="wrapper">
-    <!-- header -->
 
 
-    <!-- /header -->
-    <!-- breadcrumbs -->
+
     <section class="breadcrumbs" style="background-image: url(assets/images/breadcrumbs/reserv.jpg)">
       <div class="container">
         <div class="row">
@@ -22,8 +20,6 @@
         </div>
       </div>
     </section>
-    <!-- /breadcrumbs -->
-    <!-- reservation wizzard steps-->
 
     <div class="wizzard reservation-1">
         <div class="container-fluid reservation_last_step_container">
@@ -94,18 +90,18 @@
             <div class="wizzard-list">
               <h3 class="h3">Chambres disponibles à la date spécifiée</h3>
               <ul class="row best-room_ul">
-                <li *ngFor="let chambre of chambres | paginate: { itemsPerPage: 9, currentPage: page }" class="col-md-4 col-sm-6 col-xs-12 best-room_li" >
+                <li (click)="navigate(chambre.id)" *ngFor="let chambre of chambres | paginate: { itemsPerPage: 9, currentPage: page }" class="col-md-4 col-sm-6 col-xs-12 best-room_li" >
                   <div class="best-room_img">
-                    <a href="#"><img src="assets/images/best-rooms/1.jpg" alt=""/></a>
+                    <a ><img src="assets/images/best-rooms/1.jpg" alt=""/></a>
                     <div class="best-room_overlay">
-                      <div class="overlay_btn"><a class="btn btn-default" href="wizzard-step2.html">Select</a></div>
+                      <div  class="overlay_btn" ><a class="btn btn-default" >Selecter</a></div>
                     </div>
                   </div>
                   <div class="best-room-info">
-                    <div class="best-room_t"><a href="best-rooms-detail.html">{{ chambre.categorie_chambre.libelle }}</a></div>
+                    <div class="best-room_t"><a>{{ chambre.categorie_chambre.libelle }}</a></div>
                     <div class="best-room_desc"> {{ chambre.description }} </div>
                     <div class="best-room_price">
-                      <span> {{ chambre.prix }} </span> / night
+                      <span> {{ chambre.prix }} </span> / nuit
 
                     </div>
                   </div>

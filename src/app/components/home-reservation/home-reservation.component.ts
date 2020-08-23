@@ -19,6 +19,7 @@ export class HomeReservationComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     availability: new FormControl('')
   })
+  chambres:any=[];
 
   constructor(private route:Router) {
     this.checkForm.controls['enfants'].setValue(0, {onlySelf: true});

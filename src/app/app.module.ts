@@ -11,11 +11,11 @@ import { HomeBestRoomComponent } from './components/home-best-room/home-best-roo
 import { HomeOurServecesComponent } from './components/home-our-serveces/home-our-serveces.component';
 import { HomeSaysAboutUsComponent } from './components/home-says-about-us/home-says-about-us.component';
 import { HomeReservationComponent } from './components/home-reservation/home-reservation.component';
-import { HomeLuxuryRoomComponent } from './components/home-luxury-room/home-luxury-room.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PageReservationComponent } from './components/page-reservation/page-reservation.component';
 import { HomeComponent } from './components/home/home.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
 
 
 
@@ -29,9 +29,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HomeOurServecesComponent,
     HomeSaysAboutUsComponent,
     HomeReservationComponent,
-    HomeLuxuryRoomComponent,
     PageReservationComponent,
     HomeComponent,
+    RoomDetailsComponent,
 
   ],
   imports: [
